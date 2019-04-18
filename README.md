@@ -7,12 +7,17 @@ pack software media for install offline
 - docker
 - coda
 
+## install
+```
+yum install yum-utils createrepo
+```
+
 ## yum
 
 ### How it works
 First, you need install some yum plugin on the pack host
 ``` 
-yum install yum-plugin-downloadonly yum-utils createrepo
+yum install yum-utils createrepo
 ```
 
 For packing all packages and thire dependencies, we need prepare two empty dirs. One to be the yum install root and other one to be the yum repo root
@@ -51,3 +56,9 @@ repoclosure --repoid=offline
 
 Reference: https://unix.stackexchange.com/questions/259640/how-to-use-yum-to-get-all-rpms-required-for-offline-use
 
+## docker
+
+### How it works
+```
+sudo docker save -o <output file name> <image name>
+```
